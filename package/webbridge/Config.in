@@ -207,6 +207,23 @@ endif
 comment "netflix is dependent on the netflix package compiled as library"
 	depends on !BR2_PACKAGE_NETFLIX_LIB
 
+menuconfig BR2_PACKAGE_WEBBRIDGE_PLUGIN_OPENCDMI
+        bool "opencdmi"
+        select BR2_PACKAGE_CPPSDK_PROCESS
+        depends on BR2_PACKAGE_OPENCDMI
+        default y
+        help
+          A Plugin to interact with CDM Services.
+
+if BR2_PACKAGE_WEBBRIDGE_PLUGIN_OPENCDMI
+
+config BR2_PACKAGE_WEBBRIDGE_PLUGIN_OPENCDMI_AUTOSTART
+        depends on BR2_PACKAGE_WEBBRIDGE_PLUGIN_OPENCDMI
+        bool "autostart"
+        default y
+
+endif
+
 menuconfig BR2_PACKAGE_WEBBRIDGE_PLUGIN_WEBKITBROWSER
 	bool "webkitbrowser"
 	select BR2_PACKAGE_CPPSDK_PROCESS
