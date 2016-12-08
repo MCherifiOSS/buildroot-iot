@@ -4,7 +4,7 @@
 #
 ################################################################################
 
-WPE_VERSION = e4d2687f616e184f4dc9fe792f0be320a660eab2
+WPE_VERSION = 214977ce895de156d3504badc869178f9620380d
 WPE_SITE = $(call github,Metrological,WebKitForWayland,$(WPE_VERSION))
 
 WPE_INSTALL_STAGING = YES
@@ -86,7 +86,7 @@ WPE_DEPENDENCIES += westeros libxkbcommon
 else
 WPE_FLAGS += -DUSE_WPE_BACKEND_WAYLAND=ON -DUSE_WPE_BUFFER_MANAGEMENT_BCM_RPI=ON
 ifeq ($(BR2_PACKAGE_DVB_APPS),y)
-WPE_FLAGS +=-DUSE_WPE_BACKEND_LINUX_DVB=ON
+WPE_FLAGS +=-DUSE_WPE_TVCONTROL_BACKEND_LINUX_DVB=ON
 WPE_DEPENDENCIES += dvb-apps
 endif
 endif
