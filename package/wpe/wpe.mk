@@ -4,7 +4,7 @@
 #
 ################################################################################
 
-WPE_VERSION = e0267b2d4b74f534137c1c17a68b726105a2c942
+WPE_VERSION = 8c8cbf61882b54221d5b7190c3ff28819533b51d
 WPE_SITE = $(call github,Metrological,WebKitForWayland,$(WPE_VERSION))
 
 WPE_INSTALL_STAGING = YES
@@ -172,7 +172,7 @@ endif
 endif
 
 ifeq ($(BR2_PACKAGE_WPE_ENABLE_TV_CONTROL), y)
-WPE_FLAGS += -DENABLE_TV_CONTROL
+WPE_FLAGS += -DENABLE_TV_CONTROL=ON
 ifeq ($(BR2_PACKAGE_DVB_APPS),y)
 WPE_FLAGS +=-DUSE_WPE_TVCONTROL_BACKEND_LINUX_DVB=ON
 WPE_DEPENDENCIES += dvb-apps
